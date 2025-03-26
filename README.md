@@ -1,13 +1,13 @@
-# AWS S3 Static Website Deployment using Pulumi
+# AWS EC2 Instance Deployment using Pulumi
 
 ## Overview  
-This project automates the deployment of a **static website** on **AWS S3** using **Pulumi**. It provisions an S3 bucket, uploads site files dynamically, and sets up public access policies for hosting.  
+This project automates the deployment of an **EC2 instance** on **AWS** using **Pulumi**. It provisions a virtual machine, configures security groups, and ensures a streamlined infrastructure setup.
 
 ## Features  
-- Creates an S3 bucket with **static website hosting enabled**  
-- Uploads files dynamically from a local directory  
-- Configures a **public bucket policy** for seamless access  
-- Automates the entire infrastructure setup using **Pulumi**  
+- Creates an **AWS EC2 instance**  
+- Configures **security groups** for access control  
+- Uses **Pulumi stack outputs** for dynamic configuration  
+- Automates infrastructure provisioning with **Pulumi**  
 
 ## Prerequisites  
 - **AWS CLI** installed and configured  
@@ -19,10 +19,9 @@ This project automates the deployment of a **static website** on **AWS S3** usin
 
 ### 1️⃣ Clone the Repository  
 ```sh
-git clone https://github.com/shashwatsharma-9/CloudRepoIacPulumi.git
-cd CloudRepoIacPulumi
+git clone https://github.com/shashwatsharma-9/cloudrepopulumiEc2.git
+cd cloudrepopulumiEc2
 ```
-
 ### 2️⃣ Install Dependencies
 ```sh
 pip install pulumi pulumi-aws
@@ -41,19 +40,15 @@ pulumi stack init dev
 ```sh
 pulumi config set aws:region us-east-1
 ```
-#### Set Local Directory for Site Files
-```sh
-pulumi config set siteDir ./site
-```
 
-### 4️⃣ Deploy to AWS
+### 4️⃣ Deploy EC2 Instance
 ```sh
 pulumi up
 ```
 
-### 5️⃣ Get Website URL
+### 5️⃣ Get EC2 Instance Details
 ```sh
-pulumi stack output bucket_website_url
+pulumi stack output instance_id
 ```
 
 ## 🔥 Cleanup
@@ -61,13 +56,16 @@ To destroy the infrastructure:
 ```sh
 pulumi destroy
 ```
-⚠️ **This action will delete all deployed resources.**
+⚠️ **This action will delete the EC2 instance and associated resources.**
 
 ## 📂 Repository Structure
 ```
-📂 CloudRepoIacPulumi  
- ├── 📂 site (Static website files)  
+📂 cloudrepopulumiEc2  
  ├── 📄 __main__.py (Pulumi script)  
  ├── 📄 Pulumi.yaml  
  ├── 📄 Pulumi.dev.yaml  
  ├── 📄 README.md  
+```
+
+## 📜 License
+This project is open-source and available under the MIT License.
