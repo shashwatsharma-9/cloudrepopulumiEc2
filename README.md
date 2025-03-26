@@ -21,7 +21,7 @@ This project automates the deployment of a **static website** on **AWS S3** usin
 ```sh
 git clone https://github.com/shashwatsharma-9/CloudRepoIacPulumi.git
 cd CloudRepoIacPulumi
-
+```
 
 ### 2️⃣ Install Dependencies
 ```sh
