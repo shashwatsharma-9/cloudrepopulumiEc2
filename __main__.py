@@ -3,7 +3,7 @@ import pulumi_aws as aws
 
 
 key_pair = aws.ec2.KeyPair("my-key",
-    public_key=""
+    public_key=" "
 
 
 
